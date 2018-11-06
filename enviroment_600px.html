@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+
+      <title></title>
+
+ <!--===========================================================================
+  [A] Base Email Reset
+ <?==========================================================================-->
+    <style>
+
+    /* [A-1] Desktop/Mobile Reset
+    /^ ------------------------------------------------------------- */
+
+      #body {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        margin: 0;
+        padding: 0 !important;
+      }
+
+      table {
+        border: none;
+        border-spacing: 0;
+        margin: 0;
+      }
+
+      table, img {
+        border: 0 hidden transparent;
+      }
+
+      table, table td, table th {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      html, #body, caption, tbody, tfoot, thead {
+        border-collapse: collapse !important;
+        border: 0 !important;
+      }
+
+      #body, table, td, a {
+        text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a, a:hover, a:active ,a:link {
+        outline: 0px none;
+        border: none;
+      }
+
+      a img {
+        text-decoration: none;
+        border: none;
+      }
+
+      a[x-apple-data-detectors] {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+
+    /* [A-2] Mobile Vertical Reset
+    /^ ------------------------------------------------------------- */
+
+      @media only screen and (max-width: 480px) {
+        /* styles target google clients */
+        u+#body a {
+          /* reset google mobile data-detector links */
+          color: inherit;
+          text-decoration: inherit;
+        }
+      }
+
+
+    /* [A-3] Desktop/Mobile Enhancements
+    /^ ------------------------------------------------------------- */
+
+      /* styles hidden from outlook in this media query */
+      @media only screen {
+        /* inherit from parent or table */
+        tr, tbody, thead, tfoot, th, td, p, a, ul, li {
+          font-family: inherit;
+          font-size: inherit;
+          line-height: inherit;
+          text-align: inherit;
+        }
+
+        /* inherit from parent */
+        p, ul, li {
+          color: inherit;
+        }
+      }
+
+      /* this allows a long string to wrap */
+      #body, th, td, p, a, li {
+        word-break: break-word;
+      }
+
+      /* replicates photoshop default superscript values */
+      sup {
+        font-size: 58%;
+        line-height: 1.3;
+        vertical-align: text-top;
+      }
+
+
+    /* [A-4] Desktop/Mobile Helper Classes
+    /^ ------------------------------------------------------------- */
+
+      /* links underline by default in all clients except for gmail mobile apps, apply this class to anchors to remedy */
+      #body .a {
+        text-decoration: underline;
+      }
+
+      /* applied to parent removes space under inline-block images !! inline this */
+      .img-wrap {
+        line-height: 0;
+      }
+
+      /* */
+      a.img-wrap {
+        width: 100%;
+      }
+
+      /* gives alt text inside .img-wrap a normal line-height */
+      .img-wrap img {
+        line-height: 1.2em;
+      }
+
+      .img-wrap .imageswap-mobile {
+        font-size: 0;
+      }
+
+      /* Hides content from desktop
+      !! requires additional inline styles, see _Pattern-Library/Snippets/contentswap.html */
+      .only-mobile {
+        font-size: 0;
+        line-height: 0;
+      }
+
+      .only-mobile,
+      .only-mobile table,
+      .only-mobile img {
+        display: none;
+        max-height: 0px;
+        overflow: hidden;
+      }
+
+      /* removes the inline underline in clients using border-bottom */
+      .underline,
+      .underline a {
+        text-decoration: none !important;
+      }
+
+
+    /* [A-5]  Fluid Width (between desktop and mobile)
+    /^ ------------------------------------------------------------- */
+      @media only screen and (max-width: 599px) {
+        .content {
+          width: 100vw;
+          max-width: 100vw;
+          min-width: 100% !important;
+        }
+
+        img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* prevents tracking pixels from expanding */
+        img[width="1"] {
+          width: 1px !important;
+        }
+
+        img[height="1"] {
+          height: 1px !important;
+        }
+
+        /* prevents table width collapse in google apps */
+        #body table {
+          min-width: 100%;
+        }
+
+        /* remove breaks for fixed width :: apply .ony-fixedwidth to br */
+        .only-fixedwidth {
+          display: none;
+        }
+      }
+
+
+    /* [A-6] Mobile Helper Classes
+    /^ ------------------------------------------------------------- */
+      @media only screen and (max-width: 480px) {
+
+        .inline-table {
+          width: 100% !important;
+          min-width: 0 !important;
+        }
+
+        /* simple hide on mobile */
+        .only-desktop {
+          display: none !important;
+        }
+
+        /* hides divs and tables on desktop !! resets inline styles above */
+        .only-mobile,
+        .only-mobile table,
+        .only-mobile img {
+          max-height: inherit !important;
+          display: block !important;
+          overflow: visible !important;
+        }
+
+        .only-mobile table {
+          display: table !important;
+        }
+
+        .only-mobile img {
+          display: inline-block !important;
+        }
+
+        /* line breaks on mobile devices, apply to a empty span */
+        .br-mobile {
+          display: block;
+        }
+
+        /* th column stacking on mobile defaults */
+        /* for order switching apply on table dir="rtl", td dir="ltr" */
+        .stack-mobile {
+          display: block;
+          box-sizing: border-box;
+          width: 100% !important;
+          padding: 0 0 30px 0 !important;
+          border: none !important;
+        }
+
+        .stack-mobile.last {
+          padding-bottom: 0 !important;
+        }
+
+        .stack-mobile.text,
+        .stack-mobile .text {
+          text-align: center !important;
+        }
+
+        /* button style defaults */
+        .button-wrap {
+          text-align: center;
+        }
+
+        .button.expand {
+          width: 100%;
+          min-width: 100%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        /* image swap defaults */
+        .imageswap-desktop {
+          display: none !important;
+        }
+
+        .imageswap-mobile {
+          width: 100% !important;
+          display: inline-block !important;
+          background-origin: border-box;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+    </style>
+    <!--[if mso]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <style>
+        /* [A-7] Outlook Base Reset */
+
+          table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+          }
+          a:link, span.MsoHyperlink,
+          a:visited, span.MsoHyperlinkFollowed {
+            color: inherit;
+            mso-style-priority: 99;
+          }
+          img {
+            -ms-interpolation-mode: bicubic;
+          }
+          .img-wrap {
+            line-height: 1 !important;
+            mso-style-priority: 99;
+          }
+          /* Normalise space between bullets and text */
+          li {
+            text-indent: -1em;
+          }
+
+        /* [A-8] Outlook Base Enhnancements */
+          /* these sup values replicate photoshop default superscript values */
+          sup {
+            font-size: 90% !important;
+            mso-text-raise: 2.5%;
+            }
+          /* adds underline in outlook */
+          .underline a {
+            text-decoration: underline !important;
+          }
+      </style>
+      <![endif]-->
+
+ <!--===========================================================================
+  [B] Organism Styles
+ <?==========================================================================-->
+    <style>
+
+    /* [B-1] Mobile Viewport Client Boilerplate
+    /^ ------------------------------------------------------------- */
+      @media only screen and (max-width: 480px) {
+        .padding-x,
+        .padding-xy {
+          padding-right: 10px !important;
+          padding-left: 10px !important;
+        }
+
+        .columns .stack-mobile {
+          padding-bottom: 0 !important;
+        }
+
+        .columns .padding-y {
+          padding: 15px 10px 15px !important;
+        }
+
+        .columns .padding-xy {
+          padding: 5px 10px 10px !important;
+        }
+      }
+
+
+    /* [B-2] WebKit Mobile Viewport Organism Boilerplate
+    /^ ------------------------------------------------------------- */
+
+      /* targets webkit mobile clients where most of CSS3 is possible */
+      @media (max-width:480px) and (-webkit-min-device-pixel-ratio: 0) {
+
+      }
+
+    </style>
+
+ <!--===========================================================================
+  [C] Project Custom Styles
+ <?==========================================================================-->
+    <style>
+
+    /* [C-1] Project Custom Global Styles
+    /^ ------------------------------------------------------------- */
+
+
+    /* [C-2] Project Custom Mobile Styles
+    /^ ------------------------------------------------------------- */
+
+      @media only screen and (max-width: 480px) {
+
+      }
+
+    </style>
+</head>
+
+<body id="body" lang="en">
+
+  <!-- preview text 110 to 260 characters -->
+    <div style="display: none; max-height: 0px; overflow: hidden">
+      Preheader text goes here.
+    </div>
+
+  <table style="background-color: #D8D8D8; width: 100%" role="presentation"><tr><td class="only-desktop">&zwnj;</td>
+
+    <td class="content" style="width: 600px; font-family: Arial, sans-serif; font-size: 18px; line-height: 26px; background-color: #ffffff">
+
+
+
+    </td>
+
+  <td class="only-desktop">&zwnj;</td></tr></table>
+
+</body>
+</html>
