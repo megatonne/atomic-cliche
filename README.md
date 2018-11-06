@@ -1,2 +1,3 @@
-# atomic-cliche
-Atomic Cliché: a lightly flavored email pattern library
+# Atomic Cliché
+A lightly flavored email pattern library
+
